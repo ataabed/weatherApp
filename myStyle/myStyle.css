@@ -1,0 +1,394 @@
+
+
+
+/* basic css section*/
+/* general css  web site section*/
+*{
+
+
+}
+/* end of general css  web site section*/
+
+::selection
+ {
+
+}
+/* start of root section*/
+
+:root {
+
+    /* website fonts variables */
+    --defaultFont: "";
+    --default-font-bold: "";
+    --mainFont: "font-name","default-font-reqular",sans-serif;
+    --subFont: "font-name""default-font-reqular" ,sans-serif;
+ /* website colors */
+
+ 
+ --background-main-color:#212529;
+ --background-sub1-color:#37373f;
+ --background-sub2-color:#37373f;
+ --color-identity-1:#37373f;
+ --color-identity-2:#37373f; 
+ --color-identity-3:#37373f; 
+ --color-identity-4:#37373f;
+
+ 
+ /*website animation default values */
+ --default-animation-duration:400ms;
+ /*section main spacing */
+ /*margin*/
+ --defaultTopMargin:0rem;
+ --defaultBottomMargin:0rem;
+ --defaultleftMargin:0rem;
+ --defaultRightMargin:0rem;
+  /*padding*/
+  --defaultTopPadding:0rem;
+  --defaultBottomPadding:0rem;
+  --defaultleftPadding:0rem;
+  --defaultRightPadding:0rem;
+}
+/* end of root section*/
+/*@font-face section*/
+@font-face {
+    font-family: "main-font-bold";
+    src: url("");
+}
+
+@font-face {
+    font-family: "main-font-regular";
+    src: url("");
+}
+
+@font-face {
+    font-family: "sub-font-normal";
+    src: url("");
+}
+
+@font-face {
+    font-family: "sub-font-bold";
+    src: url("");
+}
+
+@font-face {
+    font-family: "sub-font-bolder";
+    src: url("");
+}
+
+
+@font-face {
+    font-family: "sub-font-extraLight";
+    src: url("");
+}
+
+
+@font-face {
+    font-family: "sub-font-light";
+    src: url("");
+}
+
+
+@font-face {
+    font-family: "sub-font-medium";
+    src: url("f");
+}
+
+@font-face {
+    font-family: "sub-font-regular";
+    src: url("");
+}
+
+@font-face {
+    font-family: "sub-font-semiBold";
+    src: url("");
+}
+
+@font-face {
+    font-family: "sub-font-thin";
+    src: url("");
+}
+
+@font-face {
+    font-family: "default-font-light";
+    src: url("");
+}
+
+@font-face {
+    font-family: "default-font-reqular";
+    src: url("");
+}
+
+@font-face {
+    font-family: "default-font-semiBold";
+    src: url("");
+}
+
+@font-face {
+    font-family: "default-font-Bold";
+    src: url("");
+}
+
+@font-face {
+    font-family: "default-font-extraBold";
+    src: url("");
+}
+
+/* end of @font-face section*/
+
+/*general html css data*/
+body
+{
+  
+}
+
+h1,h2,h3,h4,h5,h6
+{
+}
+
+div{
+
+}
+p{
+
+}
+
+ul {
+
+}
+
+ul li
+{
+
+}
+
+ul li a 
+{
+
+}
+
+picture 
+{
+
+}
+
+picture img
+{
+
+}
+
+span
+{
+
+}
+
+/* end of general html css data*/
+
+/* common classes */
+
+/*end of common classes */
+
+/* main sections general css*/
+
+/*nav bar*/
+
+/*hero section*/
+
+
+/*like background  , font ,header , margin ,padding */
+
+/*footer section*/
+/* end of  main sections general css*/
+/*animation section */
+
+/* @keyframes mainDish {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+
+
+} */
+
+/* end of animation section */
+
+
+
+/*pseudeo classes */
+
+
+
+/*End of pseudeo classes */
+
+
+
+
+/*pseudeo element */
+
+
+
+/*End of pseudeo element */
+
+
+
+/*End of basic css section*/
+
+/* page specific CSS */
+
+
+/*End of page specific CSS */
+
+
+/*navbar*/
+#navbar_Main .nav-item
+{
+margin-left: 2rem;
+text-transform:capitalize;
+padding-left: 1rem;
+padding-right: 1rem;
+
+}
+#navbar_Main .nav-item a{
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Archivo Black', sans-serif;
+}
+ #navbar_Main .nav-item:hover
+{
+    border:0.2rem solid  #009AD8 ;
+  color:#009AD8 ;
+    border-radius: 2rem;
+} 
+.nav_logo .site-title
+{
+    font-family: 'Anton', sans-serif;
+}
+/*end of navbar*/
+/*city search form*/
+#btn_find_city
+{
+    width: 10%;
+}
+
+
+/*display card*/
+ #temperature_degree
+{
+    font-size: 5rem;
+    font-weight: bolder;
+}
+#welcome_card
+{
+    padding-top: 4rem;
+    background-image: url('../images/background/white-cloud-blue-sky.jpg');
+    background-position: 0,0;
+    background-size: cover;
+   position: relative;
+}
+#welcome_card::after
+{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    z-index: -1;
+}
+#CityInfo
+{
+   
+
+color: black;
+
+}
+#imgCurrent
+{
+    width: 30%;
+}
+
+#currentCard
+{
+    font-family: 'Anton', sans-serif;
+    background-color:rgba(255, 255, 255, 0.2) ;
+    background-image: url('../images/cities/cairo.jpg');
+   
+    background-position: 0,0;
+    background-size: cover;
+    color: white;
+    opacity: 1;
+    box-shadow: 2px  1px rgba(255, 255,255 ,0.4);
+}
+
+
+#card_Today_parent,#card_AfterTommorow_parent,#card_tommorow_parent
+{
+    font-family: 'Archivo Black', sans-serif;
+
+background-color: #323544;
+}
+
+#card_Today_parent .header,#card_AfterTommorow_parent .header,#card_tommorow_parent .header
+{
+background-color: #2D303D;
+}
+
+
+/*footer section*/
+#Footer_section
+{
+    background-color: #262936;
+    color: white;
+}
+
+
+
+
+#Footer_section a {
+    color:#009AD8    ;
+    text-decoration: none;
+   
+    width: 3rem;
+    height: 3rem;
+    background-color: #212529;
+   
+}
+
+#Footer_section a:hover
+{
+    color: wheat;
+    background-color:#009AD8    ;
+
+}

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!---website Meta-->
+    <meta charset="UTF-8">
+    <!-- viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---- project desription -->
+    <meta name="description" content="write best description for your website here ">
+    <!-- project search engine keyword-->
+    <meta name="keywords" content="keyword1,2,3,....etc">
+
+    <!--title will appera in bookmark-->
+    <title>Weather</title>
+
+    <!--favicon-->
+
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+
+
+    <!---fonts-->
+    <!-- used google fonts section  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Fjalla+One&display=swap"
+        rel="stylesheet">
+
+    <!-- used other fonts section  -->
+    <!--font awsem-->
+    <!-- v4.6-->
+    <link rel="stylesheet" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--v6-->
+    <link rel="stylesheet" href="./fonts/all.min.css">
+
+    <!--my CSS Basics -->
+    <link rel="stylesheet" href="./myStyle/myStyleBasics.css">
+
+    <!---bootstrap css file -->
+    <link rel="stylesheet" href="./myStyle/bootstrap.min.css ">
+    <!---- Main css file link -->
+    <link rel="stylesheet" href="./myStyle/myStyle.css">
+    <!-- my media query style-->
+    <link rel="stylesheet" href="./myStyle/myMediaQuery.css">
+
+    <!--My page Title-->
+
+</head>
+
+<body class="bg-dark">
+
+    <!--- navbar-->
+    <nav id="navbar_Main" class="navbar navbar-expand-sm  py-4  bg-transparent  bg-dark navbar-dark">
+        <div class="container-fluid px-5">
+
+            <a class="navbar-brand d-flex justify-content-between " href="#">
+
+                <img src="./images/logo.png" alt="" class="w-100 align-self-center me-2 ">
+
+                <div class="row nav_logo ">
+                    <h1 class="site-title h-50 mb-0">Weather</h1>
+
+                    <!--                     <small class="site-description mt-0">tagline goes here</small>
+ -->
+                </div>
+
+
+
+
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  " id="collapsibleNavbar">
+                <ul class="navbar-nav ms-auto d-flex">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">news</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">live cameras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Photos</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" href="#">contact</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+    </nav>
+
+
+
+
+    <!-- display weather data-->
+
+    <section id="welcome_card" class="mb-5 container-fluid">
+
+        <!-- search -->
+        <div class="container">
+
+            <div class="row">
+                <div class="row justify-content-center input-group input-group-lg mb-5 ">
+                    <input type="search" id="inputCityName" name="inputCityName"
+                        class="col-46 col-md-10 form-control me-2 rounded-3" placeholder="City" aria-label="City Name">
+                    <button id="seachCityName" class="col-2 col-md-2 btn btn-primary rounded-pill  " type="button"
+                        id="btn_find_city">find</button>
+                </div>
+            </div>
+        </div>
+        <div class="row text-white " id="CityInfo">
+
+
+            <div class=" col-md-4  mx-auto mb-5 p-5 text-center ">
+                <div class="card rounded-5 pt-3  " id="currentCard">
+                    <h2 id="City_Name" class="text-white"></h2>
+                   <div class="d-flex">
+    
+                   </div>
+                <div id="imgCurrent_parent" class="">
+
+                        <img id="imgCurrent" src=".." class=" card-img-top" alt="...">
+
+                    </div>
+                    <div class="card-body text-center">
+                        <h2 class="card-title mb-0"></h2>
+                        <p class="card-text mb-0">
+                        <h2 id="textCurrent"></h2>
+
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <section id="section_days_data" class="container mb-5">
+        <div class="row text-white ">
+
+            <!---today info-->
+            <div class=" col-lg-4  p-2 ">
+                <div class=" p-0  rounded-5" id="card_Today_parent">
+                    <div class="header w-100  p-2 d-flex justify-content-around  text-white">
+                        <p class="header-dayName">
+
+                        </p>
+                        <p class="header-Date">
+
+                        </p>
+                    </div>
+                    <div id="city_name_parent" class="p-2">
+                        <h3 class="city_name">
+
+                        </h3>
+                    </div>
+                    <div id="temperature_degree" class="p-2 d-flex justify-content-around align-items-center">
+                        <div class="temperature_div">
+                            <p class="CityTemperture">
+
+                            </p>
+                        </div>
+                        <div class="temperature_image_div w-50">
+                            <img src="" class="w-100 " alt="">
+                        </div>
+                    </div>
+
+                    <div class="extra_data p-2">
+                        <p class="Condition_text fw-bolder">
+
+                        </p>
+
+                    </div>
+                    <div id="extraInfo_div" class="d-flex px-2  py-3  justify-content-around">
+                        <span id="info1" class="d-flex text-white">
+                            <img src="./images/icon-umberella.png" alt="">
+                            <h5 class="ms-2 daily_chance_of_rain	 ">
+
+                            </h5>
+
+                        </span>
+
+
+                        <span id="info2_wind" class="d-flex text-white">
+                            <img src="./images/icon-wind.png" alt="">
+                            <h5 class="ms-2 maxwind_kph">
+
+                            </h5>
+
+                        </span>
+
+                        <span id="info3_wind_dir" class="d-flex text-white">
+                            <img src="./images/icon-compass.png" alt="">
+                            <h5 class="ms-2 wind_dir">
+
+                            </h5>
+
+                        </span>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!---tommorow info-->
+            <div class=" col-lg-4  p-2 ">
+                <div class=" p-0  rounded-5" id="card_tommorow_parent">
+                    <div class="header w-100  p-2 d-flex justify-content-around  text-white">
+                        <p class="header-dayName">
+
+                        </p>
+                        <p class="header-Date">
+
+                        </p>
+                    </div>
+                    <div id="city_name_parent" class="p-2">
+                        <h3 class="city_name">
+
+                        </h3>
+                    </div>
+                    <div id="temperature_degree" class="p-2 d-flex justify-content-around align-items-center">
+                        <div class="temperature_div">
+                            <p class="CityTemperture">
+
+                            </p>
+                        </div>
+                        <div class="temperature_image_div w-50">
+                            <img src="" class="w-100 " alt="">
+                        </div>
+                    </div>
+
+                    <div class="extra_data p-2">
+                        <p class="Condition_text fw-bolder">
+
+                        </p>
+
+                    </div>
+                    <div id="extraInfo_div" class="d-flex px-2  py-3  justify-content-around">
+                        <span id="info1" class="d-flex text-white">
+                            <img src="./images/icon-umberella.png" alt="">
+                            <h5 class="ms-2 daily_chance_of_rain	 ">
+
+                            </h5>
+
+                        </span>
+
+
+                        <span id="info2_wind" class="d-flex text-white">
+                            <img src="./images/icon-wind.png" alt="">
+                            <h5 class="ms-2 maxwind_kph">
+
+                            </h5>
+
+                        </span>
+
+                        <span id="info3_wind_dir" class="d-flex text-white">
+                            <img src="./images/icon-compass.png" alt="">
+                            <h5 class="ms-2 wind_dir">
+
+                            </h5>
+
+                        </span>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!---After tommorow info-->
+
+            <div class=" col-lg-4  p-2 ">
+                <div class=" p-0  rounded-5" id="card_AfterTommorow_parent">
+                    <div class="header w-100  p-2 d-flex justify-content-around  text-white">
+                        <p class="header-dayName">
+
+                        </p>
+                        <p class="header-Date">
+
+                        </p>
+                    </div>
+                    <div id="city_name_parent" class="p-2">
+                        <h3 class="city_name">
+
+                        </h3>
+                    </div>
+                    <div id="temperature_degree" class="p-2 d-flex justify-content-around align-items-center">
+                        <div class="temperature_div">
+                            <p class="CityTemperture">
+
+                            </p>
+                        </div>
+                        <div class="temperature_image_div w-50">
+                            <img src="" class="w-100 " alt="">
+                        </div>
+                    </div>
+
+                    <div class="extra_data p-2">
+                        <p class="Condition_text fw-bolder">
+
+                        </p>
+
+                    </div>
+                    <div id="extraInfo_div" class="d-flex px-2  py-3  justify-content-around">
+                        <span id="info1" class="d-flex text-white">
+                            <img src="./images/icon-umberella.png" alt="">
+                            <h5 class="ms-2 daily_chance_of_rain	 ">
+
+                            </h5>
+
+                        </span>
+
+
+                        <span id="info2_wind" class="d-flex text-white">
+                            <img src="./images/icon-wind.png" alt="">
+                            <h5 class="ms-2 maxwind_kph">
+
+                            </h5>
+
+                        </span>
+
+                        <span id="info3_wind_dir" class="d-flex text-white">
+                            <img src="./images/icon-compass.png" alt="">
+                            <h5 class="ms-2 wind_dir">
+
+                            </h5>
+
+                        </span>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- footer section-->
+    <section id="Footer_section" class="container-fluid  mb-0">
+        <div class="container py-5">
+            <div class="row justify-content-around">
+
+
+                <div class=" col-12 col-md-8 mb-3  ">
+                    <div class="d-flex justify-content-center">
+                        <input type="search" class="form-control w-75 rounded-pill "
+                            placeholder="Enter your email to subscribe">
+                        <button class="btn btn-primary rounded-pill" type="button">Subscribe</button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-6 col-md-3">
+                    <div class="d-flex  justify-content-evenly">
+                        <a class="rounded-circle d-flex justify-content-center align-items-center" href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a class="rounded-circle d-flex justify-content-center align-items-center" href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                            <a class="rounded-circle d-flex justify-content-center align-items-center" href="#">
+                                <i class="fa-brands fa-google-plus-g"></i> </a>
+                            <a class="rounded-circle d-flex justify-content-center align-items-center" href="#">
+                                <i class="fa-brands fa-pinterest-p"></i>
+                            </a>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="text-center">
+                <p>
+                    Copyright 2014 Company name. Designed by Ata abed. All rights reserved
+                </p>
+            </div>
+        </div>
+
+    </section>
+    <!---bootstrab script bundle -->
+    <script src="./script/bootstrap.bundle.min.js" re></script>
+
+    <script src="./script//myScript.js"></script>
+
+</body>
+
+</html>

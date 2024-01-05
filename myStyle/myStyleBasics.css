@@ -1,0 +1,22 @@
+/* basic */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-size: 100%;
+  
+  
+  }
+  
+
+  .clearfix {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  

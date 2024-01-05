@@ -1,0 +1,44 @@
+/*responsive web design */
+
+/* For mobile phones: */
+@media only screen and (max-width:576px)
+{
+ 
+}
+/*orientation*/
+/*
+@media only screen and (orientation: landscape) {
+  body {
+    background-color: lightblue;
+  }
+}*/
+  /* For small : */
+@media  only screen and (min-width: 576px) {
+
+
+
+
+}
+  /* For midium display: */
+
+@media only screen and (min-width: 768px) {
+
+
+}
+  /*for large screen */
+
+@media only screen  and (min-width : 992px)
+{ 
+
+
+
+}
+   /*for Xlarge screen */
+
+@media screen and  (min-width :1200px){
+
+}
+   
+
+
+
