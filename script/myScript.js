@@ -131,7 +131,7 @@ function getWeatherInfo(cityName)
 {
     //http://api.weatherapi.com/v1/forecast.json?key=651303568a6b4a07935141735240401&q=London&days=3&aqi=no&alerts=no
     
-    const url=`http://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${cityName}&days=3&aqi=no&alerts=no`
+    const url=`https://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${cityName}&days=3&aqi=no&alerts=no`
   
         fetchData(url, callBack)
         .then(() => { console.log("Finished") });
