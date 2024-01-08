@@ -47,10 +47,10 @@
 
 </head>
 
-<body class="bg-dark">
+<body class="">
 
     <!--- navbar-->
-    <nav id="navbar_Main" class="navbar navbar-expand-sm  py-4  bg-transparent  bg-dark navbar-dark">
+    <nav id="navbar_Main" class="navbar navbar-expand-lg  py-4  bg-transparent  bg-dark navbar-dark">
         <div class="container-fluid px-5">
 
             <a class="navbar-brand d-flex justify-content-between " href="#">
@@ -147,13 +147,15 @@
 
     </section>
 
-    <section id="section_days_data" class="container mb-5">
-        <div class="row text-white ">
+    <section id="section_days_data" class="container-fluid py-4 mb-5">
+      
+      <div class="container">
+         <div class="row text-white ">
 
             <!---today info-->
             <div class=" col-lg-4  p-2 ">
-                <div class=" p-0  rounded-5" id="card_Today_parent">
-                    <div class="header w-100  p-2 d-flex justify-content-around  text-white">
+                <div class=" p-0 rounded-bottom-5 " id="card_Today_parent">
+                    <div class="header  w-100  ">
                         <p class="header-dayName">
 
                         </p>
@@ -216,8 +218,8 @@
 
             <!---tommorow info-->
             <div class=" col-lg-4  p-2 ">
-                <div class=" p-0  rounded-5" id="card_tommorow_parent">
-                    <div class="header w-100  p-2 d-flex justify-content-around  text-white">
+                <div class=" p-0  rounded-bottom-5" id="card_tommorow_parent">
+                    <div class="header w-100  ">
                         <p class="header-dayName">
 
                         </p>
@@ -281,8 +283,8 @@
             <!---After tommorow info-->
 
             <div class=" col-lg-4  p-2 ">
-                <div class=" p-0  rounded-5" id="card_AfterTommorow_parent">
-                    <div class="header w-100  p-2 d-flex justify-content-around  text-white">
+                <div class=" p-0  rounded-bottom-5" id="card_AfterTommorow_parent">
+                    <div class="header w-100  ">
                         <p class="header-dayName">
 
                         </p>
@@ -344,8 +346,19 @@
             </div>
 
         </div>
+      </div>
+
+
     </section>
 
+
+<!-- chart-->
+ <section class=" p-5 mb-5">
+    <h3 class="text-light text-center">temperature - Day Hours </h3>
+    <div class="bg-primary-subtle col-md-6 mx-auto">
+        <canvas id="myChart"  class=" "></canvas>
+    </div>
+</section> 
 
     <!-- footer section-->
     <section id="Footer_section" class="container-fluid  mb-0">
@@ -355,9 +368,9 @@
 
                 <div class=" col-12 col-md-8 mb-3  ">
                     <div class="d-flex justify-content-center">
-                        <input type="search" class="form-control w-75 rounded-pill "
+                        <input id="newEmail" type="email" class="form-control w-75 rounded-pill "
                             placeholder="Enter your email to subscribe">
-                        <button class="btn btn-primary rounded-pill" type="button">Subscribe</button>
+                        <button id="btn_subscribe" class="btn btn-primary rounded-pill" type="button">Subscribe</button>
 
                     </div>
 
@@ -385,7 +398,8 @@
             </div>
             <div class="text-center">
                 <p>
-                    Copyright 2014 Company name. Designed by Ata abed. All rights reserved
+                    Copyright 2014 Company name. <br>
+                    Designed by Ata abed. All rights reserved
                 </p>
             </div>
         </div>
@@ -393,7 +407,9 @@
     </section>
     <!---bootstrab script bundle -->
     <script src="./script/bootstrap.bundle.min.js" re></script>
-
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
     <script src="./script//myScript.js"></script>
 
 </body>
