@@ -1,7 +1,7 @@
 
-const weatherAPIKey='651303568a6b4a07935141735240401'
-
-
+const weatherAPIKey='651303568a6b4a07935141735240401';
+const newsAPIKey='59ef7caeefebd1906de9034cca72945e';
+let userLocation={latitude:0,longitude:0};
 const days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const monthNames=["January","February","March","April","May","June","July","August","September","October","November","December"];
 var currentCityName ='cairo';
@@ -35,8 +35,9 @@ function fetchError()
 }
 function fillLocationData(data)
 {
-    const CityName=document.querySelector('#City_Name')
-    CityName.innerHTML= `${data.country}<br>${data.name}`   ;
+    CityName=document.querySelector('#City_Name')
+    currentCityName=data.name
+    CityName.innerHTML= `${data.country}<br>${currentCityName}`   ;
 
 }
 function fillCurrentWeatherData(data)
@@ -98,8 +99,8 @@ const temp_image=parentDayDiv.querySelector('.temperature_image_div img')
 temp_image.setAttribute('src',`${array[index]['day']['condition']['icon'].replace("//cdn.weatherapi.com", "./images")}`)
 // condition text
 const Condition_text=parentDayDiv.querySelector('.extra_data .Condition_text')
-Condition_text.innerHTML=`<h3>${array[index]['day']['condition']['text']}</h3>`
-Condition_text.setAttribute('style','color:#1A9AD8')
+Condition_text.innerHTML=`<h5>${array[index]['day']['condition']['text']}</h5>`
+Condition_text.setAttribute('style','color:#ffffff')
 
 // extra info 
 //daily_chance_of_rain	
@@ -118,27 +119,45 @@ wind_dir.innerHTML=`${ array[index]['hour'][0]['wind_dir']} `
 } 
       
 
+
 }
+
+function fillChartHour(data)
+{
+//console.log(JSON.stringify(data[0].hour))
+const x=[];
+const y =[];
+data[0]['hour'].forEach(myFunction);
+function myFunction(value, index, array) {
+   x.push(index);
+   y.push(Math.ceil(array[index]['temp_c']))
+  }
+
+drawBar(x,y)
+}
+
+
 function callBack(x) {
  const {current,forecast,location }=x; 
 fillLocationData(location);
 fillCurrentWeatherData(current);
 const {forecastday}=forecast
 fillDayweatherData(forecastday)
+fillChartHour(forecastday)
 }
 
-function getWeatherInfo(cityName)
+function getWeatherInfo(q)
 {
     //http://api.weatherapi.com/v1/forecast.json?key=651303568a6b4a07935141735240401&q=London&days=3&aqi=no&alerts=no
     
-    const url=`https://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${cityName}&days=3&aqi=no&alerts=no`
+    const url=`https://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${q}&days=3&aqi=no&alerts=no`
   
         fetchData(url, callBack)
         .then(() => { console.log("Finished") });
 
 }
 
-getWeatherInfo(currentCityName);
+
 
 function SeacrhCityWeatherInfo(cityName)
 {
@@ -153,6 +172,92 @@ SeacrhCityWeatherInfo(currentCityName);
   
 })
 
-//images
+//geolocation
 
+function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(setPosition);
+    } 
+    else { 
 
+alert("Sorry your browser does not support auto geolocation detect")  
+  }
+  }
+  
+function setPosition(position)
+{
+userLocation.latitude=position.coords.latitude;
+userLocation.longitude=position.coords.longitude;
+let q=userLocation.latitude+','+userLocation.longitude
+getWeatherInfo(q);
+  
+}
+
+function start()
+{
+    getLocation();
+}
+
+start()
+
+document.querySelector('#btn_subscribe').addEventListener('click',function(){
+
+    const emailPattern = /^[\w\.]+@([\w]+\.)+[\w]{2,4}$/ig;
+    const email=document.querySelector('#newEmail').value;
+  
+    if ( emailPattern.test(email) == true) {
+        alert("Subcsribed Successfully")
+    }
+    else {
+
+       alert("this Email address not vlaid")
+    }
+
+})
+
+// charts 
+function drawBar(xValues,yValues)
+
+{
+
+    
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{
+          fill: false,
+          lineTension: 0,
+          backgroundColor: "rgba(0,0,255,1.0)",
+          borderColor: "rgba(0,0,255,0.1)",
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        scales: {
+        yAxes: [{ticks: {min: 0, max:(Math.max.apply(null, yValues)+10)}}],
+        }
+      }
+    })
+}
+//drawBar()
+// news
+
+ 
+/*function getNews()
+{
+    //http://api.weatherapi.com/v1/forecast.json?key=651303568a6b4a07935141735240401&q=London&days=3&aqi=no&alerts=no
+    
+    const url= 'https://gnews.io/api/v4/top-headlines?category=' + 'general' + '&lang=en&country=us&max=10&apikey=' + newsAPIKey;
+
+    
+    fetchData(url, getNews_callBack)
+        .then(() => { console.log("Finished") });
+
+}
+function getNews_callBack(result)
+{
+    console.log(q);
+}
+getNews() */
